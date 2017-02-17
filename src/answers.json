@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "answers": "foggy",
+	"img": "1.png",
+	"isExample": "true"
+	},
+  {
+    "id": "2",
+    "answers": "raining",
+	"img": "2.png",
+	"isExample": "false"
+  },
+  {
+    "id": "3",
+    "answers": "sunny",
+	"img": "3.png",
+	"isExample": "false"
+  },
+  {
+   "id": "4",
+    "answers": "cloudy",
+	"img": "4.png",
+	"isExample": "false"
+  },
+  {
+    "id": "5",
+    "answers": "windy",
+	"img": "5.png",
+	"isExample": "false"
+  },
+    {
+    "id": "6",
+    "answers": "snowing",
+	"img": "6.png",
+	"isExample": "false"
+  }
+]
