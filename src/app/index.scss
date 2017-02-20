@@ -41,6 +41,10 @@ fieldset {
 main{
   background-color: #F6F5F5;
   text-align: center;
+  .main__number{
+    font-weight: bold;
+    margin-right: 5px;
+  }
 }
 
 /**
