@@ -18,8 +18,9 @@
         ExerciseModel.addItem(Model);
         console.log(Model);
         GetJson.getData().then(function(data) {
-
-          data.forEach(function(answer) {
+          console.log(data.name);
+          console.log(data.question);
+          data.tasks.forEach(function(answer) {
             if (Model.id === answer.id) {
               Model.setAnswers(answer.answers);
               Model.setImg(answer.img);
