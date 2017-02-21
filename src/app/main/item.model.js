@@ -10,6 +10,7 @@
 
     var Item = function(id, answer, img, isExample) {
       this.id = id || 0;
+      this.inputValue = "";
       this.answer = answer || "";
       this.img = img || "";
       this.isExample = isExample || "";
@@ -36,7 +37,9 @@
 
       evaluate: function() {
         this.evaluated = true;
-        this.isCorrect = false;
+        if(this.answer.toLowerCase() === this.inputValue.toLowerCase() ){
+          this.isCorrect = true;
+        }
       }
     };
     return Item;
