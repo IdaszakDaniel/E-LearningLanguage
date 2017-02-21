@@ -35,6 +35,11 @@
         this.isExample = isExample;
       },
 
+      reset: function() {
+        this.evaluated = false;
+        this.isCorrect = false;
+      },
+
       evaluate: function() {
         this.evaluated = true;
         if(this.answer.toLowerCase() === this.inputValue.toLowerCase() ){

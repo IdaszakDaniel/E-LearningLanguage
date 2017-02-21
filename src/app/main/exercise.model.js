@@ -20,7 +20,14 @@
           element.evaluate();
         });
         return _list;
-      }
+      },
+
+      resetValues: function() {
+        _list.forEach(function(element) {
+          element.reset();
+        });
+        return _list;
+      },
     }
   }
 })();
