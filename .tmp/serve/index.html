@@ -28,6 +28,8 @@
     <main class="container main">
       <div class="row">
       <div class="col-md-12">
+        <h1>{{taskName()}}</h1>
+        <p>{{taskQuestion()}}</p>
         <div class="col-md-6"><gap id="1"></gap></div>
         <div class="col-md-6"><gap id="2"></gap></div>
         <div class="col-md-6"><gap id="3"></gap></div>
@@ -40,6 +42,7 @@
       <button class="buttonStyle" ng-click="checkAnswers()" ng-hide="HideCheck">Check</button>
       <button class="buttonStyle" ng-click="reset()" ng-hide="HideReset">Reset</button>
     </main>
+
 
 
     <!-- build:js(src) scripts/vendor.js -->

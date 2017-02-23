@@ -21,6 +21,14 @@
       $scope.HideReset = true;
       $scope.HideCheck = false;
     };
+
+    $scope.taskName = function(){
+      return ExerciseModel.taskName();
+    };
+
+    $scope.taskQuestion = function(){
+      return ExerciseModel.taskQuestion();
+    };
   }
 
 })();

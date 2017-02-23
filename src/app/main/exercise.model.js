@@ -9,10 +9,25 @@
   function ExerciseModelService() {
     var _list = [];
     var sum = 0;
+    var _title;
+    var _question;
 
     return {
       addItem: function(model) {
         return _list.push(model);
+      },
+
+      addName: function(title, question){
+        _title = title;
+        _question = question;
+      },
+
+      taskName: function(){
+        return _title;
+      },
+
+      taskQuestion: function(){
+        return _question;
       },
 
       evaluateItems: function() {

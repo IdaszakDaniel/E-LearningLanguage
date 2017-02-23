@@ -18,8 +18,7 @@
         ExerciseModel.addItem(Model);
         console.log(Model);
         GetJson.getData().then(function(data) {
-          //console.log(data.name);
-          //console.log(data.question);
+          ExerciseModel.addName(data.name, data.question);
           data.tasks.forEach(function(answer) {
             if (Model.id === answer.id) {
               Model.setAnswers(answer.answers);
