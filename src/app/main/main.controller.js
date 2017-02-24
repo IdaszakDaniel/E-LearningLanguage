@@ -9,18 +9,26 @@
   function MainController($scope, Item, ExerciseModel) {
 
     $scope.HideReset = true;
+    $scope.data = true;
 
-     $scope.checkAnswers = function() {
+    $scope.checkAnswers = function() {
+      console.log(ExerciseModel.listOfItems());
       console.log(ExerciseModel.evaluateItems());
+        ExerciseModel.visibility();
       $scope.HideCheck = true;
       $scope.HideReset = false;
+      $scope.data = !$scope.data;
+      if ($scope.data) {
+        ExerciseModel.resetValues();
+      }
+      $scope.$broadcast("getAnswers", ExerciseModel.listOfItems());
     };
 
-    $scope.reset = function(){
-      ExerciseModel.resetValues();
-      $scope.HideReset = true;
-      $scope.HideCheck = false;
-    };
+    // $scope.reset = function(){
+    //   ExerciseModel.resetValues();
+    //   $scope.HideReset = true;
+    //   $scope.HideCheck = false;
+    // };
 
     $scope.taskName = function(){
       return ExerciseModel.taskName();

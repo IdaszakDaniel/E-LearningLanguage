@@ -39,11 +39,8 @@
       </div>
         
       </div>
-      <button class="buttonStyle" ng-click="checkAnswers()" ng-hide="HideCheck">Check</button>
-      <button class="buttonStyle" ng-click="reset()" ng-hide="HideReset">Reset</button>
+      <button class="buttonStyle" ng-click="checkAnswers()">{{ data === true ? "Check" : "Reset" }}</button>
     </main>
-
-
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->

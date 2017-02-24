@@ -8,7 +8,7 @@
   /** @ngInject */
   function ItemModel() {
 
-    var Item = function(id, answer, img, isExample) {
+    var Item = function(id, answer, img, isExample, evaluated, isCorrect, toggleVisibility) {
       this.id = id || 0;
       this.inputValue = "";
       this.answer = answer || "";
@@ -16,6 +16,7 @@
       this.isExample = isExample || "";
       this.evaluated = false;
       this.isCorrect = false;
+      this.toggleVisibility = toggleVisibility || false;
     }
 
     Item.prototype = {
@@ -40,6 +41,10 @@
         this.isCorrect = false;
       },
 
+/*      toggleVisibility: function() {
+        this.toggleVisibility = !this.toggleVisibility;
+      }, 
+*/
       evaluate: function() {
         this.evaluated = true;
         if(this.answer.toLowerCase() === this.inputValue.toLowerCase() ){
