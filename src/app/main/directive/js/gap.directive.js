@@ -17,25 +17,24 @@
         ExerciseModel.addItem(Model);
 
         $scope.$on("getAnswers", function(a, param) {
-          console.log("marian pedale:", param);
           param.forEach(function(answer){
-            if(answer.id === Model.id){
-              $scope.Model.inputValue = answer.answer;
+            if (Model.toggleVisibility === true) {
+             $scope.Model.inputValue = answer.answer; 
+            } else {
+              $scope.Model.inputValue = "";
             }
           });
         });
 
-        //console.log(Model);
         GetJson.getData().then(function(data) {
           ExerciseModel.addName(data.name, data.question);
           data.tasks.forEach(function(answer) {
-            //console.log(answer);
             if (Model.id === answer.id) {
-      //        console.log(Item.toggleVisibility);
               Model.setAnswers(answer.answers);
               Model.setImg(answer.img);
               Model.setisExample(answer.isExample);
             }
+
           });
         });
       }
