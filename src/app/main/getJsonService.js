@@ -6,15 +6,26 @@
     .service('GetJson', GetJsonService);
 
     function GetJsonService($http, $q) {
-     var deferred = $q.defer();
-     $http.get('answers.json').success(function(data) {
-        deferred.resolve(data);
-      });
+      var _data;
       return {
-        getData:  function() {
-          return deferred.promise;
+
+        loadJson: function(id) {
+          return $http.get('answers'+Number(id)+'.json').then(function(data) {
+            _data = data.data;
+          });
+        },
+        
+        getName: function() {
+          return _data.name;
         },
 
+        getQuestion: function() {
+          return _data.question;
+        },
+
+        getAnswers: function() {
+          return _data.tasks;
+        }
       };
     }
 })();

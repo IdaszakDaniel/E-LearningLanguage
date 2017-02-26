@@ -6,10 +6,13 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($scope, Item, ExerciseModel) {
+  function MainController($scope, Item, ExerciseModel, GetJson, $compile, $stateParams) {
 
-    $scope.HideReset = true;
     $scope.data = true;
+
+    console.log(GetJson.getQuestion());
+    /*angular.element(".content").html(GetJson.getName());
+    $compile(angular.element(".content").contents())($scope);*/
 
     $scope.checkAnswers = function() {
       if($scope.data) ExerciseModel.userAnswers();
@@ -23,13 +26,13 @@
       $scope.$broadcast("getAnswers", ExerciseModel.listOfItems());
     };
 
-    $scope.taskName = function(){
+   /* $scope.taskName = function(){
       return ExerciseModel.taskName();
     };
 
     $scope.taskQuestion = function(){
       return ExerciseModel.taskQuestion();
-    };
+    };*/
   }
 
 })();

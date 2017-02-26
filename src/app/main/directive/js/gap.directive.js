@@ -5,7 +5,7 @@
     .module('cartProject')
     .directive('gap', Gap);
 
-  function Gap(Item, GetJson, ExerciseModel) {
+  function Gap(Item, GetJson, ExerciseModel, $stateParams) {
     return {
       scope: {},
       restrict: 'E',
@@ -28,16 +28,12 @@
           });
         });
 
-        GetJson.getData().then(function(data) {
-          ExerciseModel.addName(data.name, data.question);
-          data.tasks.forEach(function(answer) {
-            if (Model.id === answer.id) {
-              Model.setAnswers(answer.answers);
-              Model.setImg(answer.img);
-              Model.setisExample(answer.isExample);
-            }
-
-          });
+        GetJson.getAnswers().forEach(function(answer) {
+          if (Model.id === answer.id) {
+            Model.setAnswers(answer.answers);
+            Model.setImg(answer.img);
+            Model.setisExample(answer.isExample);
+          }
         });
       }
     };
