@@ -19,9 +19,11 @@
         $scope.$on("getAnswers", function(a, param) {
           param.forEach(function(answer){
             if (Model.toggleVisibility === true) {
-             $scope.Model.inputValue = answer.answer; 
+              if (Model.id === answer.id) {
+                $scope.Model.inputValue = answer.answer; 
+              }
             } else {
-              $scope.Model.inputValue = "";
+              $scope.Model.inputValue = Model.userAnswer;
             }
           });
         });

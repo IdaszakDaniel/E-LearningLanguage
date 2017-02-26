@@ -12,23 +12,16 @@
     $scope.data = true;
 
     $scope.checkAnswers = function() {
-      console.log(ExerciseModel.listOfItems());
-      console.log(ExerciseModel.evaluateItems());
-        ExerciseModel.visibility();
-      $scope.HideCheck = true;
-      $scope.HideReset = false;
+      if($scope.data) ExerciseModel.userAnswers();
+      ExerciseModel.listOfItems();
+      ExerciseModel.evaluateItems();
+      ExerciseModel.visibility();
       $scope.data = !$scope.data;
       if ($scope.data) {
         ExerciseModel.resetValues();
       }
       $scope.$broadcast("getAnswers", ExerciseModel.listOfItems());
     };
-
-    // $scope.reset = function(){
-    //   ExerciseModel.resetValues();
-    //   $scope.HideReset = true;
-    //   $scope.HideCheck = false;
-    // };
 
     $scope.taskName = function(){
       return ExerciseModel.taskName();
