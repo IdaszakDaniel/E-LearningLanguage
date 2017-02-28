@@ -27,7 +27,7 @@
             }
           });
         });
-
+        ExerciseModel.addName(GetJson.getName(), GetJson.getQuestion());
         GetJson.getAnswers().forEach(function(answer) {
           if (Model.id === answer.id) {
             Model.setAnswers(answer.answers);

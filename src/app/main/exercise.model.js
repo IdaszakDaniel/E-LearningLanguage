@@ -8,8 +8,8 @@
   /** @ngInject */
   function ExerciseModelService() {
     var _list = [];
-    //var _title;
-    //var _question;
+    var _title;
+    var _question;
     var answersList = [];
 
     return {
@@ -17,7 +17,7 @@
         return _list.push(model);
       },
 
-     /* addName: function(title, question){
+      addName: function(title, question){
         _title = title;
         _question = question;
       },
@@ -28,7 +28,7 @@
 
       taskQuestion: function(){
         return _question;
-      },*/
+      },
 
       evaluateItems: function() {
         _list.forEach(function(element) {
@@ -53,6 +53,13 @@
           element.setUserAnswer();
         });
         return _list;
+      },
+
+      listOfAnswers: function() {
+        _list.forEach(function(element) {
+          answersList.push(element.answer);
+        });
+        return answersList;
       },
 
       resetValues: function() {

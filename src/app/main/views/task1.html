@@ -1,5 +1,6 @@
 <div class="col-md-12">
-  <h1 class="content"></h1>
+  <h1>{{taskName()}}</h1>
+  <p>{{taskQuestion()}}</p>
 </div>
 <div class="col-md-12">
   <div class="col-md-6"><gap id="1"></gap></div>
@@ -14,3 +15,4 @@
   <a ui-sref="task({id: 1})"><button class="buttonStyle">View 1</button></a>
   <a ui-sref="task({id: 2})"><button class="buttonStyle">View 2</button></a>
 </div>
+<p>{{showAnswers}}</p>

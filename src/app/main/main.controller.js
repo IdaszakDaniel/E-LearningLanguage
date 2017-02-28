@@ -10,7 +10,7 @@
 
     $scope.data = true;
 
-    console.log(GetJson.getQuestion());
+    //console.log(GetJson.getQuestion());
     /*angular.element(".content").html(GetJson.getName());
     $compile(angular.element(".content").contents())($scope);*/
 
@@ -26,13 +26,15 @@
       $scope.$broadcast("getAnswers", ExerciseModel.listOfItems());
     };
 
-   /* $scope.taskName = function(){
+    $scope.showAnswers = ExerciseModel.listOfAnswers();
+
+    $scope.taskName = function(){
       return ExerciseModel.taskName();
     };
 
     $scope.taskQuestion = function(){
       return ExerciseModel.taskQuestion();
-    };*/
+    };
   }
 
 })();
