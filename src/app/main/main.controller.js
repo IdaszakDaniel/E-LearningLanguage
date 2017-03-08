@@ -19,9 +19,11 @@
       ExerciseModel.listOfItems();
       ExerciseModel.evaluateItems();
       ExerciseModel.visibility();
+      $scope.result = ExerciseModel.getScore();
       $scope.data = !$scope.data;
       if ($scope.data) {
         ExerciseModel.resetValues();
+        $scope.result = 0;
       }
       $scope.$broadcast("getAnswers", ExerciseModel.listOfItems());
     };

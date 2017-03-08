@@ -4,37 +4,37 @@
   "tasks":[
     {
       "id": "1",
-      "answers": "foggy",
+      "answers": "a",
       "img": "6.png",
       "isExample": "true"
     },
     {
       "id": "2",
-      "answers": "raining",
+      "answers": "b",
       "img": "5.png",
       "isExample": "false"
     },
     {
       "id": "3",
-      "answers": "sunny",
+      "answers": "c",
       "img": "4.png",
       "isExample": "false"
     },
     {
      "id": "4",
-      "answers": "cloudy",
+      "answers": "d",
       "img": "3.png",
       "isExample": "false"
     },
     {
       "id": "5",
-      "answers": "windy",
+      "answers": "e",
       "img": "2.png",
       "isExample": "false"
     },
       {
       "id": "6",
-      "answers": "snowing",
+      "answers": "f",
       "img": "2.png",
       "isExample": "false"
     }

@@ -56,10 +56,17 @@
       },
 
       listOfAnswers: function() {
+        console.log("before:",answersList);
         _list.forEach(function(element) {
           answersList.push(element.answer);
         });
         return answersList;
+      },
+
+      getScore: function(){
+        return _list.reduce(function(sum, element){
+          return sum + ((element.isCorrect) ? 1 : 0);
+        }, 0);
       },
 
       resetValues: function() {
