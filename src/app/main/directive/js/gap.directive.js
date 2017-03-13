@@ -5,7 +5,7 @@
     .module('cartProject')
     .directive('gap', Gap);
 
-  function Gap(Item, GetJson, ExerciseModel, $stateParams) {
+  function Gap(Item, GetJson, ExerciseModel, $stateParams, LocalStorage, $localStorage) {
     return {
       scope: {},
       restrict: 'E',
@@ -27,6 +27,34 @@
             }
           });
         });
+
+        
+
+        var storageValues = LocalStorage.getLocalStorageValues();
+        console.log("storageValues ",storageValues);
+        var storageKeys = LocalStorage.getLocalStorageKeys();
+        console.log("storageKeys ",storageKeys);
+        var eachViewStorage = LocalStorage.getEachViewStorage();
+        console.log("eachViewStorage ",eachViewStorage);
+        var eachViewArr = [],
+            containThisView = "";
+
+        for (var key in eachViewStorage) {
+          eachViewArr.push(eachViewStorage[key]);
+        }
+
+        for (var i=0; i<= eachViewArr.length; i++) {
+          if(i == $stateParams.id) {
+            containThisView = eachViewArr[i];
+          }
+        }
+
+        for (var key in containThisView) {
+          if (Model.id == key) {
+            $scope.Model.inputValue = containThisView[key];
+          }
+        }
+
         ExerciseModel.addName(GetJson.getName(), GetJson.getQuestion());
         GetJson.getAnswers().forEach(function(answer) {
           if (Model.id === answer.id) {

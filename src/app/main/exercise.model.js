@@ -56,7 +56,6 @@
       },
 
       listOfAnswers: function() {
-        console.log("before:",answersList);
         _list.forEach(function(element) {
           answersList.push(element.answer);
         });
