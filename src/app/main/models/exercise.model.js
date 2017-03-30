@@ -10,7 +10,7 @@
     var _list = [];
     var _title;
     var _question;
-    var answersList = [];
+    //var answersList = [];
 
     return {
       addItem: function(model) {
@@ -56,6 +56,7 @@
       },
 
       listOfAnswers: function() {
+        var answersList = [];
         _list.forEach(function(element) {
           answersList.push(element.answer);
         });

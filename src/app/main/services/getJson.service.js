@@ -3,15 +3,17 @@
 
   angular
     .module('cartProject')
-    .service('GetJson', GetJsonService);
+    .service('GetJson', GetJson);
 
-    function GetJsonService($http, $q) {
-      var _data;
+    /** @ngInject **/
+    function GetJson($http, $q) {
+      var _data = null;
       return {
 
         loadJson: function(id) {
           return $http.get('answers'+Number(id)+'.json').then(function(data) {
             _data = data.data;
+            console.log(_data);
           });
         },
         
@@ -25,6 +27,10 @@
 
         getAnswers: function() {
           return _data.tasks;
+        },
+
+        getTest: function(){
+          return _data.content;
         }
       };
     }
