@@ -1,5 +1,4 @@
 # E-LearningLanguage
-
 E-learning app to learn language by gap-filling exercises.
 
 <b>to install dependencies:</b></br>
